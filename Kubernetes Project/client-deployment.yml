@@ -7,14 +7,16 @@ spec:
   selector:
     matchLabels:
       component: web
+      #app: client-deployment
   template:
     metadata:
       labels:
         component: web
+        #app: client-deployment
     spec:
         containers:
-            - name: client
-              image: sreelakshmi248/complex_client
+            - name: client-deployment
+              image: sreelakshmi248/complex_client #:v1
               resources:
                   limits:
                     memory: "128Mi"
