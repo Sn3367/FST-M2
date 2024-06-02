@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: vishnupriyasoundarrajan/simple-blog-api
+          image: sreelakshmi248/simple-blog-api
           resources:
                   limits:
                     memory: "128Mi"
