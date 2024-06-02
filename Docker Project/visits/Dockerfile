@@ -1,8 +1,19 @@
-# Specify Base Image
-FROM alpine
-# Work Directory
+# Specify base image
+FROM node:18-alpine
+
+# Set the working directory
 WORKDIR /usr/app
-#Install Redis in Apline
-RUN apk add --update redis
-#Start the redis-server
-CMD [ "redis-server" ]
+
+# WORKDIR means mkdir & cd together
+
+# Copy package.jsondocker  into container
+COPY package.json ./
+
+# Install Dependencies
+RUN npm install
+
+# Copy the rest of the files
+COPY ./ ./
+
+# Startup Command
+CMD ["npm", "start"]
